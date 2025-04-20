@@ -352,7 +352,7 @@ body.dark-theme .tab-content {
   100% { transform: rotate(360deg); }
 }
 /* 響應式設計：手機裝置 */
-@media (max-width: 768px) {
+@media (max-width: 1168px) {
   body {
     padding: 10px;
   }
