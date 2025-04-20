@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>台灣自來水費試算系統</title>
+    <link rel="stylesheet" href="water-fee-calculator-styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>台灣自來水費試算系統</h1><button class="switch-theme" id="themeToggle">切換主題</button>
+        <div class="input-group">
+            <label for="userType">用水類別：</label> <select id="userType">
+                <option value="normal">
+                    一般用水
+                </option>
+                <option value="military">
+                    軍眷用水
+                </option>
+                <option value="municipal">
+                    市政用水
+                </option>
+                <option value="Temporary">
+                    臨時用水(農業、空地)
+                </option>
+                <option value="illegal">
+                    違章用水(93)
+                </option>
+                <option value="discounted">
+                    優惠用水(國小、國中)
+                </option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="meterSize">水表口徑：</label> <select id="meterSize">
+                <option value="13">
+                    13mm
+                </option>
+                <option value="20">
+                    20mm
+                </option>
+                <option value="25">
+                    25mm
+                </option>
+                <option value="40">
+                    40mm
+                </option>
+                <option value="50">
+                    50mm
+                </option>
+                <option value="75">
+                    75mm
+                </option>
+                <option value="100">
+                    100mm
+                </option>
+                <option value="150">
+                    150mm
+                </option>
+                <option value="200">
+                    200mm
+                </option>
+                <option value="250">
+                    250mm
+                </option>
+                <option value="300">
+                    300mm
+                </option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="waterUsage">實際用水度數（度） （1度 = 1立方公尺）：</label> <input id="waterUsage" min="0" placeholder="請輸入實際用水度數" step="1" type="number">
+        </div>
+        <div class="input-group">
+            <label for="sharedUsage">分攤度數（度）：</label> <input id="sharedUsage" min="0" placeholder="請輸入分攤度數" step="1" type="number" value="0">
+        </div>
+        <div class="input-group">
+            <label for="WasteDisposalRate">清除處理費費率（元／度）：</label> <input id="WasteDisposalRate" min="0" step="0.1" type="number" value="3.7"> <span class="tooltip">❓ <span class="tooltip-text">清除處理費只計算實際用水度數，不包含分攤度數</span></span>
+        </div>
+        <div class="input-group">
+            <label for="SewageSewerRate">污水下水道使用費率（元／度）：</label> <input id="SewageSewerRate" min="0" step="0.1" type="number" value="0"> <span class="tooltip">❓ <span class="tooltip-text">污水下水道使用費計算，包含分攤度數</span></span>
+        </div>
+        <div class="input-group">
+            <label for="wrccfRate">水源保育與回饋費率：</label> <select id="wrccfRate">
+                <option value="0">
+                    不收（0%）
+                </option>
+                <option selected value="0.05">
+                    收取 5%
+                </option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="billingCycle">抄表頻率：</label> <select id="billingCycle">
+                <option value="bimonthly">
+                    隔月抄表
+                </option>
+                <option value="monthly">
+                    每月抄表
+                </option>
+            </select>
+        </div><button id="calculateButton" onclick="calculateWaterFee()">計算水費</button>
+        <div class="loader" id="loader"></div>
+        <div class="tabs" id="chartTabs">
+            <div class="tab active" data-tab="pieChart">
+                費用分佈圓餅圖
+            </div>
+            <div class="tab" data-tab="barChart">
+                費用明細長條圖
+            </div>
+            <div class="tab" data-tab="lineChart">
+                各級距用水價折線圖
+            </div>
+        </div>
+        <div class="tab-content active" id="pieChart">
+            <div class="chart-container" id="pieChartContainer">
+                <canvas id="feeDistributionChart"></canvas>
+            </div>
+        </div>
+        <div class="tab-content" id="barChart">
+            <div class="chart-container" id="barChartContainer">
+                <canvas id="feeBreakdownChart"></canvas>
+            </div>
+        </div>
+        <div class="tab-content" id="lineChart">
+            <div class="chart-container" id="lineChartContainer">
+                <canvas id="priceStructureChart"></canvas>
+            </div>
+        </div>
+        <div class="result" id="result"></div>    
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script> 
+    <script src="water-fee-calculator-script.js"></script>
+    <footer>
+        <div class="container">
+		<hr>
+		<p>© 2025 ALL RIGHTS RESERVED. 本頁由 <a href="https://www.google.com/" target="_blank">台水一區路人丙-阿谷</a> 建置(但不想維護)</p>
+        </div>
+    </footer>
+</body>
+</html>
