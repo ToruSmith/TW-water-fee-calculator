@@ -354,12 +354,12 @@ body.dark-theme .tab-content {
 /* 響應式設計：手機裝置 */
 @media (max-width: 1268px) {
   body {
-    font-size: 1.6em; /* 字體整體放大 */
+    font-size: 2.2em; /* 字體整體放大 */
     padding: 10px;
   }
 
   .total-highlight{
-    font-size: 1.6em; /* 可視情況個別微調 */
+    font-size: 2.2em; /* 可視情況個別微調 */
   }
   .calculator {
     padding: 15px;
@@ -368,7 +368,7 @@ body.dark-theme .tab-content {
   }
 
   .input-group {
-    font-size: 1.2em;
+    font-size: 1.6em;
     margin-bottom: 20px;
     width: 90%;
   }
