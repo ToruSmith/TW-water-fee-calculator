@@ -359,7 +359,7 @@ body.dark-theme .tab-content {
   }
 
   .total-highlight{
-    font-size: 1.4em; /* 可視情況個別微調 */
+    font-size: 1.9em; /* 可視情況個別微調 */
   }
   .calculator {
     padding: 15px;
@@ -368,8 +368,8 @@ body.dark-theme .tab-content {
   }
 
   .input-group {
-    font-size: 1.4em;
-    margin-bottom: 20px;
+    font-size: 1.9em;
+    margin-bottom: 35px;
     width: 90%;
   }
 
@@ -385,7 +385,7 @@ body.dark-theme .tab-content {
 
   button {
     width: 100%;
-    font-size: 1.4em;
+    font-size: 1.9em;
     padding: 12px;
   }
 
