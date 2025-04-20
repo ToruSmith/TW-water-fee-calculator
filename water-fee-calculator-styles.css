@@ -358,8 +358,14 @@ body.dark-theme .tab-content {
     padding: 10px;
   }
 
+  .tab,
+  .tab-content,
+  .info-box,
+  .result,
+  .breakdown-item,
+  .highlight-box,
   .total-highlight{
-    font-size: 1.9em; /* 可視情況個別微調 */
+    font-size: 1.22em; /* 可視情況個別微調 */
   }
   .calculator {
     padding: 15px;
