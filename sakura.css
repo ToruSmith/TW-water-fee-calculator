@@ -1,0 +1,24 @@
+﻿/* sakura.css */
+#sakura-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.6); /* 或改成 #333 / white 之類的 */
+  color: white;
+}
+
+footer a {
+  color: #f39c12; /* 亮橘或你喜歡的顏色 */
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #ffffff; /* 滑鼠移過時變白 */
+}
